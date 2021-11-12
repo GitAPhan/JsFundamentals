@@ -90,7 +90,7 @@ var AllStarsList = [
 //      loop to add in key to objects
 for (var i = 0; i < players.length; i++) {
     var AllStarYears = AllStarsList[i].All_Star_Year;
-        players[i].All_Star_Year = AllStarYears;
+    players[i].All_Star_Year = AllStarYears;
 }
 console.log(`Name: ${players[0].playersName}, Number: ${players[0].playersNumber}, Playing Status: ${players[0].isPlaying}, First All Star Year: ${players[0].All_Star_Year[0]}`);
 
@@ -143,12 +143,31 @@ for (i = 0; i < players.length; i++) {
 // if the third player has at least 3 years in the all_star_years array 
 // and will console log "NOT Repeat All Star" if this is not the case
 //      while loop to sort through players 
-i=0
-while(i<players.length) {
-    if(players[i].All_Star_Year.length > 2) {
+i = 0
+while (i < players.length) {
+    if (players[i].All_Star_Year.length > 2) {
         console.log(`${players[i].playersName} is a Repeat All Star!`);
     } else {
         console.log(`${players[i].playersName} is NOT a Repeat All Star!`);
     }
     i++;
 }
+
+// Using your players variable, create an if statement that will console log "At least one small number" 
+// ANY player has a number less than 10 (DO NOT USE A LOOP),
+// "At least one medium number" if at least one player has a number less than 20 and
+// "All large numbers" in any other case
+
+// this is the sort the objects by playersNumber (small - big)
+players.sort((firstItem, secondItem) => firstItem.playersNumber - secondItem.playersNumber);
+// is statement to look at the first object in array 
+if (players[0].playersNumber < 10) {
+    console.log('At least one small number');
+} else if (players[0].playersNumber < 20) {
+    console.log('At least one medium number');
+} else {
+    console.log('All large numbers');
+}
+
+
+
