@@ -79,13 +79,20 @@ console.log(players[2], players[4]);
 
 // Modify each object in players and give each player a key called all_star_years set to an array of numbers
 // Console log the first players name, number, their playing status and their first year as an all star.
-//      created list of first all star year
-var AllStarsList = [2018, 2000, 1998, 1999, 2012, 2011];
+//      created an array of arrays of all star years per player
+var AllStarsList = [
+    { All_Star_Year: [1999, 2001, 2002] },
+    { All_Star_Year: [1997, 2002, 2004, 2007] },
+    { All_Star_Year: 2004 },
+    { All_Star_Year: [1986, 1988, 1989, 1990, 1991, 1992, 1994, 1996, 1997] },
+    { All_Star_Year: 2000 },
+    { All_Star_Year: [2003, 2006] }];
 //      loop to add in key to objects
 for (var i = 0; i < players.length; i++) {
-    players[i].First_All_Star_Year = AllStarsList[i];
+    var AllStarYears = AllStarsList[i].All_Star_Year;
+        players[i].All_Star_Year = AllStarYears;
 }
-console.log(players[0]);
+console.log(`Name: ${players[0].playersName}, Number: ${players[0].playersNumber}, Playing Status: ${players[0].isPlaying}, First All Star Year: ${players[0].All_Star_Year[0]}`);
 
 
 
@@ -127,7 +134,11 @@ if (has_paid && items_in_cart >= 5) {
 // Using your players variable, create an if statement that will console log the first players name if the first player's is_playing is true
 // Note that the console will log or not depending on what the is_playing of the first player in the array is set to
 for (i = 0; i < players.length; i++) {
-    if(players[i].isPlaying) {
+    if (players[i].isPlaying) {
         console.log(`${players[i].playersName} is playing`);
     }
 }
+
+// Using your players variable, create an if statement that will console log "Repeat All Star" 
+// if the third player has at least 3 years in the all_star_years array 
+// and will console log "NOT Repeat All Star" if this is not the case
