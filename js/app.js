@@ -169,5 +169,24 @@ if (players[0].playersNumber < 10) {
     console.log('All large numbers');
 }
 
+// Modify your players variable, adding a number_of_goals to a number for each player.
+// Create an if statement that will console log "At least one small number" ANY player has a number less than 10 (DO NOT USE A LOOP),
+// "At least one medium number" if at least one player has a number less than 20 and
+// "All large numbers" in any other case
 
-
+var number_of_goals = [42, 52, 34, 77, 9, 40000000];
+// you only said to not use loop only for the if statement
+// created loop to add key value to objects
+for(i=0; i<players.length; i++) {
+    players[i].number_of_goals = number_of_goals[i];
+}
+// this is the sort the objects by number_of_goals (small - big)
+players.sort((firstItem, secondItem) => firstItem.number_of_goals - secondItem.number_of_goals);
+// if statement to look at the player with the least amount of goals
+if(players[0].number_of_goals < 10) {
+    console.log('At least one small number');
+} else if(players[0].number_of_goals < 20) {
+    console.log('At lease one medium number');
+} else {
+    console.log('All large numbers');
+}
