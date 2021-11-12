@@ -142,3 +142,13 @@ for (i = 0; i < players.length; i++) {
 // Using your players variable, create an if statement that will console log "Repeat All Star" 
 // if the third player has at least 3 years in the all_star_years array 
 // and will console log "NOT Repeat All Star" if this is not the case
+//      while loop to sort through players 
+i=0
+while(i<players.length) {
+    if(players[i].All_Star_Year.length > 2) {
+        console.log(`${players[i].playersName} is a Repeat All Star!`);
+    } else {
+        console.log(`${players[i].playersName} is NOT a Repeat All Star!`);
+    }
+    i++;
+}
